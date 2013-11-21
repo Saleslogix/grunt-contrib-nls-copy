@@ -36,7 +36,7 @@ Example of package.json:
   "version": "8.1.0",
   "devDependencies": {
     "grunt": "~0.4.0",
-    "grunt-contrib-nls-copy": "https://github.com/Saleslogix/grunt-contrib-nls-copy.git"
+    "grunt-contrib-nls-copy": "https://github.com/Saleslogix/grunt-contrib-nls-copy/tarball/master"
   }
 }
 ```

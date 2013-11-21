@@ -94,14 +94,17 @@ module.exports = function(grunt) {
         }
 
         function tfsOp(tfbin, outfile, operation, flags) {
-            var deferred = Q.defer();
-            exec([path.normalize('"' + tfbin + '"'), operation, flags, outfile].join(' '), function(error, stdout, stderr) {
+            var deferred = Q.defer(),
+                child;
+            child = exec([path.normalize('"' + tfbin + '"'), operation, flags, outfile].join(' '), function(error, stdout, stderr) {
                 if (error) {
                     grunt.log.error('Error' + error);
                     deferred.reject(new Error(error));
                 } else {
                     deferred.resolve(stdout);
                 }
+
+                child.kill();
             });
 
             return deferred.promise;

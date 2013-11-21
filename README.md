@@ -28,3 +28,15 @@ module.exports = function(grunt) {
     grunt.registerTask('default', ['nlscopy']);
 };
 ```
+
+Example of package.json: 
+```
+{
+  "name": "saleslogix",
+  "version": "8.1.0",
+  "devDependencies": {
+    "grunt": "~0.4.0",
+    "grunt-contrib-nls-copy": "https://github.com/Saleslogix/grunt-contrib-nls-copy.git"
+  }
+}
+```

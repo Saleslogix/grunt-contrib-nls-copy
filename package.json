@@ -1,8 +1,14 @@
 {
   "name": "grunt-contrib-nls-copy",
-  "version": "0.1.0",
+  "version": "0.1.1",
+  "dependencies": {
+    "q": "~0.9.7"
+  },
   "devDependencies": {
     "grunt": "~0.4.0",
     "q": "~0.9.7"
+  },
+  "peerDependencies": {
+    "grunt": "~0.4.0"
   }
 }

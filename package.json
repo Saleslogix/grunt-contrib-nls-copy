@@ -1,6 +1,6 @@
 {
   "name": "grunt-contrib-nls-copy",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "dependencies": {
     "q": "~0.9.7"
   },
@@ -10,5 +10,6 @@
   },
   "peerDependencies": {
     "grunt": "~0.4.0"
-  }
+  },
+  "readmeFilename": "README.md"
 }

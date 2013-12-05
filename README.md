@@ -11,6 +11,7 @@ module.exports = function(grunt) {
         nlscopy: {
             options: {
                 tfbin: 'C:/Program Files (x86)/Microsoft Visual Studio 11.0/Common7/IDE/TF.exe',
+                skipCheckin: false,
                 dojo: {
                     src: '../Libraries/dojo_slx/dojo/'
                 },
@@ -41,7 +42,7 @@ Example of package.json:
 }
 ```
 
-Changes:
+## History
 
 0.1.3
  * Added new option "skipCheckin" that will skip checking in the tfs items, allowing the developer to review the files after the task runs

@@ -40,3 +40,18 @@ Example of package.json:
   }
 }
 ```
+
+Changes:
+
+0.1.3
+ * Added new option "skipCheckin" that will skip checking in the tfs items, allowing the developer to review the files after the task runs
+ * Fixed dojo src path issue, and added debug logging for the dojo path
+ 
+0.1.2
+ * Allow dojo path to be absolute
+
+0.1.1
+ * Fixed dependencies
+
+0.1.0
+ * Initial checkin

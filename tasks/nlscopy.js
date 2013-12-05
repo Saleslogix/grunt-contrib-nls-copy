@@ -25,9 +25,8 @@ module.exports = function(grunt) {
             ]
         };
 
-        // Require dojo - the path the user gave in options was relative to Gruntfile.js
-        // We need to make it relative to this module (node_modules/grunt-contrib-nls-copy/tasks)
-        require(path.resolve('../../../', options.dojo.src, 'dojo.js'));
+        grunt.log.debug(path.resolve(options.dojo.src, 'dojo.js'));
+        require(path.resolve(options.dojo.src, 'dojo.js'));
 
         files = getAllFilePaths(this.files);
         files.forEach(function(filepath) {
@@ -59,7 +58,9 @@ module.exports = function(grunt) {
             })
             .then(function() {
                 // Do a recursive checkin on all the *.js nls files
-                tfsCheckinPromises.push(tfsOp(options.tfbin, '*.js', 'checkin', '/recursive /comment:\"NLS Bundle Update\" /noprompt /override:\"grunt-contrib-nls-copy: Version Update\"'));
+                if (!options.skipCheckin) {
+                    tfsCheckinPromises.push(tfsOp(options.tfbin, '*.js', 'checkin', '/recursive /comment:\"NLS Bundle Update\" /noprompt /override:\"grunt-contrib-nls-copy: Version Update\"'));
+                }
 
                 return Q.allSettled(tfsCheckinPromises);
             }, function(error) {
